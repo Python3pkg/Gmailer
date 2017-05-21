@@ -60,7 +60,7 @@ class Gmailer(object):
 
         # Checks if HTML is generated. Returns "None" if no results found.
         if html == "None":
-            print 'Report - NO RESULTS found %-20s | From: %-15s  | To : %s' % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), from_name, recipients)
+            print('Report - NO RESULTS found %-20s | From: %-15s  | To : %s' % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), from_name, recipients))
         else:
             try:
                 # print "Connecting to SMTP"
@@ -72,14 +72,14 @@ class Gmailer(object):
                 server.login(gmail_user, gmail_pwd)
                 server.sendmail(gmail_user, recipients, message.as_string())
                 server.close()
-                print 'Report - SENT             %-20s | From: %-15s  | To : %s' %(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), from_name, recipients)
+                print('Report - SENT             %-20s | From: %-15s  | To : %s' %(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), from_name, recipients))
             except:
-                print 'Report - FAILED           %-20s | From: %-15s  | To : %s' %(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), from_name, recipients)
+                print('Report - FAILED           %-20s | From: %-15s  | To : %s' %(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), from_name, recipients))
 
 def test():
     from getpass import getpass
     # Initialize Gmailer with login credentials
-    username = raw_input("Gmail username    : ")
+    username = input("Gmail username    : ")
     password = getpass("Gmail app password: ")
     gmail_credentials = {
         "username": username,

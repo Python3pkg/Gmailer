@@ -2,7 +2,7 @@ import datetime
 import time
 import sys
 import os
-from url_checker.validator import check_if_url
+from .url_checker.validator import check_if_url
 
 
 class Generate_table(object):
@@ -41,7 +41,7 @@ class Generate_table(object):
 
             if col_to_summarise is None:
                 # Raise exception if header stated is not found
-                print str('"' + column_to_summarise + '" not found in table headers')
+                print(str('"' + column_to_summarise + '" not found in table headers'))
             else:
                 table_rows = self.table_rows
                 total_all = len(table_rows)
@@ -159,6 +159,6 @@ if __name__ == '__main__':
     }
     list_of_table_dicts = [test_table_dict1, test_table_dict2]
     # Test generate table function
-    print Generate_table(test_table_dict2).as_html()
+    print(Generate_table(test_table_dict2).as_html())
     # Test generate email html function
     # print Generate_email("Daily report",list_of_table_dicts).html()

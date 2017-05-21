@@ -20,6 +20,6 @@ class check_if_url(object):
       return url_to_check
       
 if __name__ == '__main__':
-  test_url = raw_input("What string would you like to test?\n")
+  test_url = input("What string would you like to test?\n")
   check_url = check_if_url()
-  print check_url.if_url_convert(test_url)
+  print(check_url.if_url_convert(test_url))
